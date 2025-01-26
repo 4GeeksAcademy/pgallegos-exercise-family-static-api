@@ -34,7 +34,7 @@ def get_all_members():
 def handle_member_by_id(id):
     if request.method == "DELETE":
         jackson_family.delete_member(id)
-        return True
+        return jsonify("Member deleted"), 200
     else:
         member = jackson_family.get_member(id)
         if member:
